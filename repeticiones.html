@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fondo Difuminado</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(to right, #ffd3c8, #a6e7ff, #caffbf);
+    }
+
+    #word-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .animated-word {
+      font-family: 'Arial', sans-serif;
+      font-size: 24px;
+      color: #333;
+      white-space: nowrap;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #ffcccb;
+      border: none;
+      cursor: pointer;
+    }
+
+    h6{
+        position: fixed;
+        height: 700px;
+    
+    }
+
+  </style>
+</head>
+<body>
+  <div id="word-container"></div>
+  <h6>
+    <a href="index.html">De Vuelta Al Corazon xd</a>
+</h6>
+  
+    <button onclick="addWord('flor')">Flor</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const wordContainer = document.getElementById("word-container");
+
+      // Repite "karen" 500 veces con animación palabra por palabra
+      for (let i = 0; i < 100; i++) {
+        const wordElement = document.createElement("div");
+        wordElement.className = "animated-word";
+        wordElement.textContent = "_karen te quiero mucho neta xd  ";
+        wordElement.style.animationDelay = `${i * 0.05}s`;
+        wordContainer.appendChild(wordElement);
+      }
+    });
+
+    function addWord(word) {
+      const wordContainer = document.getElementById("word-container");
+      const wordElement = document.createElement("div");
+      wordElement.className = "animated-word";
+      wordElement.textContent = word + " ";
+      wordContainer.appendChild(wordElement);
+    }
+  </script>
+</body>
+</html>
+
